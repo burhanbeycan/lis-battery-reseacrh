@@ -2,6 +2,9 @@
 
 > **Interactive academic research website** showcasing machine learning-driven discovery of titanium-based cathode materials for high-performance lithium-ion batteries.
 
+---
+**Live Demo:** https://burhanbeycan.github.io/lis-battery-research/
+
 [![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.3.5-646CFF.svg)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
