@@ -31,19 +31,27 @@ export default function EnhancedInteractive() {
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 12
 
-  // Load data
-  useEffect(() => {
-    fetch('/compounds_data.json')
-      .then(res => res.json())
-      .then(data => {
-        setCompounds(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Error loading data:', err)
-        setLoading(false)
-      })
-  }, [])
+// Load data
+useEffect(() => {
+  const dataPath = `${import.meta.env.BASE_URL}compounds_data.json`
+  console.log('Loading data from:', dataPath)
+  fetch(dataPath)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`)
+      }
+      return res.json()
+    })
+    .then(data => {
+      console.log('Data loaded successfully:', data.length, 'compounds')
+      setCompounds(data)
+      setLoading(false)
+    })
+    .catch(err => {
+      console.error('Error loading data:', err)
+      setLoading(false)
+    })
+}, [])
 
   // Filter compounds
   const filteredCompounds = useMemo(() => {
