@@ -315,7 +315,6 @@ pnpm run build
 npm i -g netlify-cli
 netlify deploy --prod --dir=dist
 ```
-
 ---
 
 ## 📄 Academic Paper
